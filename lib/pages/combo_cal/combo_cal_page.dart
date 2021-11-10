@@ -26,6 +26,18 @@ class _ComboCalculatorPageState extends State<ComboCalculatorPage>
   int totalAP = 0;
   String selectedCardName = "";
 
+  void _calTotalAP(){
+    totalAP = 0;
+    setState(() {
+      for(var card in selectedCard){
+        var ap = 0;
+        if(card.ap != 'N/A'){
+          ap = int.parse(card.ap);
+        }
+        totalAP += ap;
+      }
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -163,11 +175,8 @@ class _ComboCalculatorPageState extends State<ComboCalculatorPage>
                               SizedBox(height: 5.0,),
                               ElevatedButton(onPressed: (){
                                 setState(() {
-                                  var ap = 0;
-                                  if(card.ap != 'N/A')
-                                    ap = int.parse(card.ap);
-                                  totalAP -= ap;
                                   selectedCard.remove(card);
+                                  _calTotalAP();
                                   _updateSelectedCardName();
                                 });
                               }, child: Text("Remove",), style: ElevatedButton.styleFrom(
@@ -245,10 +254,7 @@ class _ComboCalculatorPageState extends State<ComboCalculatorPage>
             ElevatedButton(onPressed: (){
               setState(() {
                 selectedCard.add(cardItem);
-                var ap = 0;
-                if(cardItem.ap != 'N/A')
-                  ap = int.parse(cardItem.ap);
-                totalAP += ap;
+                _calTotalAP();
                 _updateSelectedCardName();
               });
             }, child: Text("Select"),
