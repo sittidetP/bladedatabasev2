@@ -40,15 +40,21 @@ class _RiderListState extends State<RiderList> {
                     padding: const EdgeInsets.all(16.0),
                     child: Row(
                       children: [
+                        Container(
+                          color: Colors.white,
+                          child: Image.asset(
+                            riderItem.defaultImage,
+                            height: 80.0,
+                            width: 80.0,
+                            fit: BoxFit.cover,
+                            alignment: Alignment.topCenter,
+                          ),
+                        ),
+                        SizedBox(width: 10.0,),
                         riderItem.icon,
                         SizedBox(width: 10.0,),
                         Text(riderItem.name, style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold, color: Colors.white),),
-                        Image.asset(
-                          riderItem.defaultImage,
-                          height: 80.0,
-                          width: 80.0,
-                          fit: BoxFit.fitHeight,
-                        )
+
                       ],
                     ),
                   ),

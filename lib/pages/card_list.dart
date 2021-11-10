@@ -40,9 +40,9 @@ class _RouseCardListState extends State<RouseCardList> {
                     padding: const EdgeInsets.all(16.0),
                     child: Row(
                       children: [
-                        Text(categoryItem.categoryName, style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold, color: Colors.white),),
+                        Image.asset("assets/images/resource/KRBl-Rouse_Card_Back.png", height: 100.0,),
                         SizedBox(width: 10.0,),
-                        Image.asset("assets/images/resource/KRBl-Rouse_Card_Back.png", height: 100.0,)
+                        Text(categoryItem.categoryName, style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold, color: Colors.white),),
                       ],
                     ),
                   ),

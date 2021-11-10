@@ -21,7 +21,7 @@ class _CardDetailPageState extends State<CardDetailPage> {
             var cardDataItem = realCategoryData.suitCardDatas[sIndex].cardDatas[index];
 
             return Card(
-              margin: EdgeInsets.all(8.0),
+              margin: EdgeInsets.only(top: 8.0, bottom: 8.0, left: 16.0, right: 16.0),
               elevation: 5.0,
               shadowColor: Colors.black.withOpacity(0.2),
               child: Padding(
@@ -75,11 +75,19 @@ class _CardDetailPageState extends State<CardDetailPage> {
             ],
           ),
         ),
-        body: TabBarView(
-          children: [
-            for(int i = 0; i < categoryData.suitCardDatas.length; ++i)
-              _buildCardInfo(i)
-          ],
+        body: Container(
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage("assets/images/resource/bg6.jpg"),
+              fit: BoxFit.cover,
+            )
+          ),
+          child: TabBarView(
+            children: [
+              for(int i = 0; i < categoryData.suitCardDatas.length; ++i)
+                _buildCardInfo(i)
+            ],
+          ),
         ),
       ),
     );

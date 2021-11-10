@@ -29,6 +29,7 @@ class _ComboCalculatorPageState extends State<ComboCalculatorPage>
   @override
   Widget build(BuildContext context) {
     return Container(
+      color: Colors.white,
       child: SingleChildScrollView(
         child: Column(
           children: [
@@ -37,6 +38,7 @@ class _ComboCalculatorPageState extends State<ComboCalculatorPage>
               child: Column(
                 children: [
                   Container(
+                    color: Colors.white,
                     child: TabBar(
                       controller: _tabController1,
                       onTap: (index) {
@@ -84,7 +86,13 @@ class _ComboCalculatorPageState extends State<ComboCalculatorPage>
                     ),
                   ),
                   Container(
-                    height: 365.0,
+                    decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage("assets/images/resource/bg_b.jpg"),
+                          fit: BoxFit.cover
+                        )
+                    ),
+                    height: 375.0,
                     child: TabBarView(
                       controller: _tabController2,
                       children: [
@@ -214,6 +222,7 @@ class _ComboCalculatorPageState extends State<ComboCalculatorPage>
 
   Widget _buildCardItem(CardData cardItem) {
     return Card(
+      margin: EdgeInsets.all(8.0),
       elevation: 5.0,
       shadowColor: Colors.black.withOpacity(0.5),
       child: Padding(

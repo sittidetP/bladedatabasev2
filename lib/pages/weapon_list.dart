@@ -20,11 +20,10 @@ class _WeaponListState extends State<WeaponList> {
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage("assets/images/resource/bg7.jpg"),
-            fit: BoxFit.cover,
-          )
-        ),
+            image: DecorationImage(
+          image: AssetImage("assets/images/resource/bg7.jpg"),
+          fit: BoxFit.cover,
+        )),
         child: ListView.builder(
             itemCount: datas.length,
             itemBuilder: (BuildContext context, int index) {
@@ -36,17 +35,34 @@ class _WeaponListState extends State<WeaponList> {
                 shadowColor: Colors.black.withOpacity(0.2),
                 color: Colors.black.withOpacity(0.5),
                 child: InkWell(
-                  onTap: () => _handleClickWeaponItem(weaponItem)
-                  ,
+                  onTap: () => _handleClickWeaponItem(weaponItem),
                   child: Padding(
                     padding: const EdgeInsets.all(16.0),
                     child: Row(
                       children: [
+                        Container(
+                            color: Colors.white,
+                            child: Image.asset(
+                              weaponItem.defaultImage,
+                              height: 100.0,
+                              width: 100.0,
+                              fit: BoxFit.cover,
+                              alignment: Alignment.centerLeft,
+                            )),
+                        SizedBox(
+                          width: 15.0,
+                        ),
                         weaponItem.weaponIcon,
-                        SizedBox(width: 15.0,),
-                        Text(weaponItem.weaponName, style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold, color: Colors.white),),
-                        SizedBox(width: 15.0,),
-                        Image.asset(weaponItem.defaultImage, height: 50.0,)
+                        SizedBox(
+                          width: 15.0,
+                        ),
+                        Text(
+                          weaponItem.weaponName,
+                          style: TextStyle(
+                              fontSize: 20.0,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white),
+                        ),
                       ],
                     ),
                   ),

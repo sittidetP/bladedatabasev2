@@ -22,6 +22,12 @@ class _WeaponDetailPageState extends State<WeaponDetailPage> {
       appBar: AppBar(title: Text(weaponData.weaponName)),
       body: SingleChildScrollView(
         child: Container(
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage("assets/images/resource/bg7.jpg"),
+              fit: BoxFit.cover,
+            ),
+          ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
@@ -30,6 +36,7 @@ class _WeaponDetailPageState extends State<WeaponDetailPage> {
                 child: Column(
                   children: [
                     Container(
+                      color: Colors.white,
                       child: TabBar(
                         labelColor: Colors.blue,
                         tabs: [
@@ -41,15 +48,27 @@ class _WeaponDetailPageState extends State<WeaponDetailPage> {
                       ),
                     ),
                     Container(
-                      height: 300.0,
+                      height: 350.0,
                       child: TabBarView(
                         children: [
                           for (int i = 0;
                               i < weaponData.weaponModes.length;
                               ++i)
-                            Image.asset(
-                              weaponData.weaponModes[i].images,
-                              height: 300.0,
+                            Center(
+                              child: Wrap(
+                                children: [
+                                  Card(
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: Image.asset(
+                                        weaponData.weaponModes[i].images,
+                                        height: 340.0,
+                                        fit: BoxFit.contain,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
                             )
                         ],
                       ),
@@ -59,26 +78,31 @@ class _WeaponDetailPageState extends State<WeaponDetailPage> {
               ),
               Padding(
                 padding: const EdgeInsets.all(10.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "Description",
-                      style: TextStyle(
-                          fontSize: 30.0, fontWeight: FontWeight.bold),
+                child: Card(
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Description",
+                          style: TextStyle(
+                              fontSize: 30.0, fontWeight: FontWeight.bold),
+                        ),
+                        Text(weaponData.description,
+                            style: TextStyle(fontSize: 18.0)),
+                        Text(
+                          "Rouse Combos",
+                          style: TextStyle(
+                              fontSize: 30.0, fontWeight: FontWeight.bold),
+                        ),
+                        if (weaponData.rouseCombos.length > 0)
+                          _buildWeaponRouseCombosDes(weaponData.rouseCombos)
+                        else
+                          Text("          -", style: TextStyle(fontSize: 18.0,))
+                      ],
                     ),
-                    Text(weaponData.description,
-                        style: TextStyle(fontSize: 18.0)),
-                    Text(
-                      "Rouse Combos",
-                      style: TextStyle(
-                          fontSize: 30.0, fontWeight: FontWeight.bold),
-                    ),
-                    if (weaponData.rouseCombos.length > 0)
-                      _buildWeaponRouseCombosDes(weaponData.rouseCombos)
-                    else
-                      Text("          -", style: TextStyle(fontSize: 18.0,))
-                  ],
+                  ),
                 ),
               )
             ],
