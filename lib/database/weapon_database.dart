@@ -221,7 +221,7 @@ class WeaponDatabase {
                 "      The S.I.C. series has shown an Empowered form of the Rouzer, but with the additional blade extending from the end from where the cards are roused. Given the nature of the weapon, were Leangle to acquire a King Form, the Heavy Rousing Staff King Rouzer would likely still need a separate cardholder.",
         rouseCombos: [
           RouseComboData(
-              comboName: "Blizzard Clash",
+              comboName: "Blizzard Crush",
               cards: "Bite Cobra (♣5) + Blizzard Polar (♣6)",
               apCost: "2400 (♣5=1200, ♣6=1200)",
               comboDes:
