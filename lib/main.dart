@@ -5,6 +5,7 @@ import 'package:bladedatabase/pages/combo_cal/combo_cal_page.dart';
 import 'package:bladedatabase/pages/home/home_page.dart';
 import 'package:bladedatabase/pages/rider_detail/rider_detail_page.dart';
 import 'package:bladedatabase/pages/rider_list.dart';
+import 'package:bladedatabase/pages/splash/splash_screen.dart';
 import 'package:bladedatabase/pages/weapon_detail/weapon_detail_page.dart';
 import 'package:bladedatabase/pages/weapon_list.dart';
 import 'package:flutter/material.dart';
@@ -43,8 +44,9 @@ class MyApp extends StatelessWidget {
         WeaponList.routeName: (context) => const WeaponList(),
         WeaponDetailPage.routeName : (context) => const WeaponDetailPage(),
         ComboCalculatorPage.routeName:(context) => const ComboCalculatorPage(),
+        SplashScreen.routeName:(context) => const SplashScreen(),
       },
-      initialRoute: HomePage.routeName,
+      initialRoute: SplashScreen.routeName,
     );
   }
 }

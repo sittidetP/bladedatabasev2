@@ -18,6 +18,12 @@ class _RouseCardListState extends State<RouseCardList> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("assets/images/resource/bg6.jpg"),
+            fit: BoxFit.cover,
+          )
+        ),
         child: ListView.builder(
             itemCount: datas.length,
             itemBuilder: (BuildContext context, int index) {
@@ -27,13 +33,16 @@ class _RouseCardListState extends State<RouseCardList> {
                 margin: EdgeInsets.all(8.0),
                 elevation: 5.0,
                 shadowColor: Colors.black.withOpacity(0.2),
+                color: Colors.black.withOpacity(0.5),
                 child: InkWell(
                   onTap: () => _handleClickCategoryItem(categoryItem),
                   child: Padding(
                     padding: const EdgeInsets.all(16.0),
                     child: Row(
                       children: [
-                        Text(categoryItem.categoryName),
+                        Text(categoryItem.categoryName, style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold, color: Colors.white),),
+                        SizedBox(width: 10.0,),
+                        Image.asset("assets/images/resource/KRBl-Rouse_Card_Back.png", height: 100.0,)
                       ],
                     ),
                   ),

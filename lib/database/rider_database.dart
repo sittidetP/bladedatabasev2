@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 class RiderDatabase {
   List<RiderData> datas = [
     RiderData(
-        name: "Kamen rider Blade",
+        name: "Kamen Rider Blade",
         icon: Icon(CardFonts.spade, color: Colors.indigo,),
         defaultImage: "assets/images/blade/Form/KR-Blade_AceForm.png",
         forms: [

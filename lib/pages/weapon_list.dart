@@ -19,6 +19,12 @@ class _WeaponListState extends State<WeaponList> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("assets/images/resource/bg7.jpg"),
+            fit: BoxFit.cover,
+          )
+        ),
         child: ListView.builder(
             itemCount: datas.length,
             itemBuilder: (BuildContext context, int index) {
@@ -28,6 +34,7 @@ class _WeaponListState extends State<WeaponList> {
                 margin: EdgeInsets.all(8.0),
                 elevation: 5.0,
                 shadowColor: Colors.black.withOpacity(0.2),
+                color: Colors.black.withOpacity(0.5),
                 child: InkWell(
                   onTap: () => _handleClickWeaponItem(weaponItem)
                   ,
@@ -37,7 +44,7 @@ class _WeaponListState extends State<WeaponList> {
                       children: [
                         weaponItem.weaponIcon,
                         SizedBox(width: 15.0,),
-                        Text(weaponItem.weaponName),
+                        Text(weaponItem.weaponName, style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold, color: Colors.white),),
                         SizedBox(width: 15.0,),
                         Image.asset(weaponItem.defaultImage, height: 50.0,)
                       ],

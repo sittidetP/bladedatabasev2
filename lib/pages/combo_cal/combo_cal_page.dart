@@ -84,7 +84,7 @@ class _ComboCalculatorPageState extends State<ComboCalculatorPage>
                     ),
                   ),
                   Container(
-                    height: 345.0,
+                    height: 365.0,
                     child: TabBarView(
                       controller: _tabController2,
                       children: [
@@ -128,7 +128,7 @@ class _ComboCalculatorPageState extends State<ComboCalculatorPage>
                   fit: BoxFit.cover
                 )
               ),
-              height: 345.0,
+              height: 390.0,
               width: double.infinity,
               child: SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
@@ -136,10 +136,11 @@ class _ComboCalculatorPageState extends State<ComboCalculatorPage>
                   children: [
                     for(var card in selectedCard)
                       Card(
+                        margin: EdgeInsets.all(10.0),
                         elevation: 5.0,
                         shadowColor: Colors.black.withOpacity(0.5),
                         child: Padding(
-                          padding: const EdgeInsets.all(10.0),
+                          padding: const EdgeInsets.all(16.0),
                           child: Column(
                             children: [
                               Image.asset(card.cardImage, height: 240.0,),
@@ -173,6 +174,7 @@ class _ComboCalculatorPageState extends State<ComboCalculatorPage>
               ),
             ),
             Card(
+              margin: EdgeInsets.all(8.0),
               elevation: 5.0,
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
@@ -197,7 +199,7 @@ class _ComboCalculatorPageState extends State<ComboCalculatorPage>
                       Row(
                         children: [
                           Text("          + ", style: TextStyle(fontSize: 18.0),),
-                          Text(info.description, style: TextStyle(fontSize: 18.0),),
+                          Expanded(child: Text(info.description, style: TextStyle(fontSize: 18.0),)),
                         ],
                       )
                   ],

@@ -18,6 +18,12 @@ class _RiderListState extends State<RiderList> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("assets/images/resource/bg4.jpg"),
+            fit: BoxFit.cover
+          )
+        ),
         child: ListView.builder(
             itemCount: datas.length,
             itemBuilder: (BuildContext context, int index) {
@@ -27,6 +33,7 @@ class _RiderListState extends State<RiderList> {
                 margin: EdgeInsets.all(8.0),
                 elevation: 5.0,
                 shadowColor: Colors.black.withOpacity(0.2),
+                color: Colors.black.withOpacity(0.5),
                 child: InkWell(
                   onTap: () => _handleClickRiderItem(riderItem),
                   child: Padding(
@@ -35,7 +42,7 @@ class _RiderListState extends State<RiderList> {
                       children: [
                         riderItem.icon,
                         SizedBox(width: 10.0,),
-                        Text(riderItem.name),
+                        Text(riderItem.name, style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold, color: Colors.white),),
                         Image.asset(
                           riderItem.defaultImage,
                           height: 80.0,
