@@ -46,7 +46,7 @@ class _ComboCalculatorPageState extends State<ComboCalculatorPage>
         child: Column(
           children: [
             DefaultTabController(
-              length: datas.length - 3,
+              length: datas.length - 2,
               child: Column(
                 children: [
                   Container(
@@ -67,7 +67,7 @@ class _ComboCalculatorPageState extends State<ComboCalculatorPage>
                       },
                       labelColor: Colors.blue,
                       tabs: [
-                        for (int i = 1; i < datas.length - 2; ++i)
+                        for (int i = 1; i < datas.length - 1; ++i)
                           Tab(
                             text: datas[i].categoryName,
                           )
@@ -281,7 +281,7 @@ class _ComboCalculatorPageState extends State<ComboCalculatorPage>
   @override
   void initState() {
     cate = datas[1];
-    _tabController1 = TabController(length: datas.length - 3, vsync: this);
+    _tabController1 = TabController(length: datas.length - 2, vsync: this);
     _tabController2 =
         TabController(length: cate.suitCardDatas.length, vsync: this);
     _suitCardDatas = cate.suitCardDatas;
