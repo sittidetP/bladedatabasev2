@@ -58,7 +58,7 @@ class _ComboCalculatorPageState extends State<ComboCalculatorPage>
                           cate = datas[index + 1];
                           _tabController2 = TabController(
                               length: cate.suitCardDatas.length, vsync: this);
-                          if (index == 4) _indexSuitCard = 0;
+                          if (index >= 4) _indexSuitCard = 0;
                           //_suitCardDatas = cate.suitCardDatas;
                           _tabController2.animateTo(_indexSuitCard,
                               duration: Duration(seconds: 0));
