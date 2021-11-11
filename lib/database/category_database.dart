@@ -486,19 +486,19 @@ class CategoryDatabase {
         CardData(
             cardName: "Mighty Gravity",
             description: "Allows Glaive to execute the Gravity Slash attack.",
-            ap: "N/A",
+            ap: "3500",
             cardImage:
                 "assets/images/rouseCard/mightyCards/KRBl-Mighty_Gravity_Rouse_Card.png"),
         CardData(
             cardName: "Mighty Impact",
             description: "Allows Lance to execute the Impact Stab attack.",
-            ap: "N/A",
+            ap: "3400",
             cardImage:
                 "assets/images/rouseCard/mightyCards/KRBl-Mighty_Impact_Rouse_Card.png"),
         CardData(
             cardName: "Mighty Ray",
             description: "Allows Larc to execute the Ray Bullet attack.",
-            ap: "N/A",
+            ap: "3100",
             cardImage:
                 "assets/images/rouseCard/mightyCards/KRBl-Mighty_Ray_Rouse_Card.png"),
       ])
