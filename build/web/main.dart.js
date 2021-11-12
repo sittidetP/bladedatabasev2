@@ -34221,7 +34221,7 @@ V.a8m.prototype={}
 L.a8I.prototype={}
 F.Cg.prototype={
 K(a,b){var s=X.adl(null,C.d_)
-return new S.tx(P.aQ(["/home",new F.TM(),"/rouseCardList",new F.TN(),"/riderList",new F.TO(),"/riderDetail",new F.TP(),"/cardDetail",new F.TQ(),"/weaponList",new F.TR(),"/weaponDetail",new F.TS(),"/comboCal",new F.TT(),"/initialize",new F.TU()],t.N,t.Ab),"/initialize","Flutter Demo",s,new K.OS(),null)}}
+return new S.tx(P.aQ(["/home",new F.TM(),"/rouseCardList",new F.TN(),"/riderList",new F.TO(),"/riderDetail",new F.TP(),"/cardDetail",new F.TQ(),"/weaponList",new F.TR(),"/weaponDetail",new F.TS(),"/comboCal",new F.TT(),"/initialize",new F.TU()],t.N,t.Ab),"/initialize","Kamen Rider Blade Database",s,new K.OS(),null)}}
 F.TM.prototype={
 $1(a){return C.AK},
 $S:120}
